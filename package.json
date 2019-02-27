@@ -1,0 +1,72 @@
+{
+  "name": "bakesale",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "commit": "npx git-cz",
+    "precommit": "lint-staged",
+    "prettier": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\" && prettier --write \"./*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "yarn test",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "16.6.3",
+    "react-native": "0.58.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^24.0.9",
+    "@types/react": "^16.8.5",
+    "@types/react-native": "^0.57.38",
+    "@types/react-test-renderer": "^16.8.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.1.0",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "ghooks": "^2.0.4",
+    "jest": "24.1.0",
+    "lint-staged": "^8.1.4",
+    "metro-react-native-babel-preset": "0.52.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "16.6.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ]
+  }
+}
