@@ -11,6 +11,7 @@ This app presents deals from bakesaleforgood website.
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Native](http://facebook.github.io/react-native/)
+- [React Navigation](https://reactnavigation.org)
 - [MST](https://github.com/mobxjs/mobx-state-tree)
 - [RxJS](http://reactivex.io/rxjs/)
 

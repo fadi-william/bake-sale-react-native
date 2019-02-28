@@ -1,10 +1,20 @@
-import React, { Component } from "react";
-import Main from "./src/screens/Main";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-class App extends Component {
-  render() {
-    return <Main />;
+import Deals from "./src/screens/Deals";
+import DealDetails from "./src/screens/DealDetails";
+
+const AppNavigator = createStackNavigator(
+  {
+    Deals: {
+      screen: Deals
+    },
+    DealDetails: {
+      screen: DealDetails
+    }
+  },
+  {
+    initialRouteName: "Deals"
   }
-}
+);
 
-export default App;
+export default createAppContainer(AppNavigator);

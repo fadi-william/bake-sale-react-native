@@ -1,17 +1,18 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import { priceDisplay } from "../../../utils/utils";
 
 interface IDealListItemProps {
   deal: any;
+  onPress: () => void;
 }
 
 class DealListItem extends React.Component<IDealListItemProps> {
   render() {
     const deal = this.props.deal;
     return (
-      <View style={styles.deal}>
+      <TouchableOpacity style={styles.deal} onPress={this.props.onPress}>
         <Image
           source={{
             uri: deal.media[0]
@@ -25,7 +26,7 @@ class DealListItem extends React.Component<IDealListItemProps> {
             <Text style={styles.price}>{priceDisplay(deal.price)}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   deal: {
     marginHorizontal: 12,
     marginTop: 6,
-    marginBottom: 6,
+    marginBottom: 6
   },
   image: {
     width: "100%",

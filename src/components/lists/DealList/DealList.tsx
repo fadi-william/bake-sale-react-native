@@ -4,6 +4,7 @@ import DealListItem from "./DealListItem";
 
 interface IDealListProps {
   deals: any[];
+  onPress: () => void;
 }
 
 class DealList extends React.Component<IDealListProps> {
@@ -12,7 +13,13 @@ class DealList extends React.Component<IDealListProps> {
       <View style={styles.list}>
         <FlatList
           data={this.props.deals}
-          renderItem={({ item }) => <DealListItem key={item.key} deal={item} />}
+          renderItem={({ item }) => (
+            <DealListItem
+              key={item.key}
+              deal={item}
+              onPress={this.props.onPress}
+            />
+          )}
         />
       </View>
     );

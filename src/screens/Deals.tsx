@@ -1,9 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, ActivityIndicator, StyleSheet } from "react-native";
 import { fetchInitialDeals } from "../service/dealService";
 import DealList from "../components/lists/DealList/DealList";
+import { NavigationScreenProps } from "react-navigation";
 
-class Main extends React.Component {
+class Deals extends React.Component<NavigationScreenProps> {
+  static navigationOptions = {
+    title: "Deals"
+  };
+
   state = {
     deals: []
   };
@@ -16,13 +21,17 @@ class Main extends React.Component {
     });
   }
 
+  onPress = () => {
+    this.props.navigation.push("DealDetails");
+  };
+
   render() {
     return (
       <View style={styles.container}>
         {this.state.deals.length > 0 ? (
-          <DealList deals={this.state.deals} />
+          <DealList deals={this.state.deals} onPress={this.onPress} />
         ) : (
-          <Text style={styles.header}>Bakesale</Text>
+          <ActivityIndicator size="large" color="#0000ff" />
         )}
       </View>
     );
@@ -40,4 +49,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Main;
+export default Deals;
