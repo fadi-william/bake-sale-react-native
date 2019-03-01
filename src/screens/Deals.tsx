@@ -14,15 +14,22 @@ class Deals extends React.Component<NavigationScreenProps> {
   };
 
   componentDidMount() {
-    fetchInitialDeals().then(r => {
-      this.setState(prevState => ({
-        deals: r.data
-      }));
-    });
+    fetchInitialDeals()
+      .then(r => {
+        this.setState(prevState => ({
+          deals: r.data
+        }));
+      })
+      .catch(() => {
+        // There's a problem with the network.
+        // Use a utility function to present a Toast
+      });
   }
 
-  onPress = () => {
-    this.props.navigation.push("DealDetails");
+  onPress = (dealId: string) => {
+    this.props.navigation.push("DealDetails", {
+      dealId
+    });
   };
 
   render() {

@@ -4,7 +4,7 @@ import DealListItem from "./DealListItem";
 
 interface IDealListProps {
   deals: any[];
-  onPress: () => void;
+  onPress: (dealId: string) => void;
 }
 
 class DealList extends React.Component<IDealListProps> {

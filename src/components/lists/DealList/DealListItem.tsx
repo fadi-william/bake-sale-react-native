@@ -5,14 +5,17 @@ import { priceDisplay } from "../../../utils/utils";
 
 interface IDealListItemProps {
   deal: any;
-  onPress: () => void;
+  onPress: (dealId: string) => void;
 }
 
 class DealListItem extends React.Component<IDealListItemProps> {
   render() {
     const deal = this.props.deal;
     return (
-      <TouchableOpacity style={styles.deal} onPress={this.props.onPress}>
+      <TouchableOpacity
+        style={styles.deal}
+        onPress={() => this.props.onPress(deal.key)}
+      >
         <Image
           source={{
             uri: deal.media[0]
