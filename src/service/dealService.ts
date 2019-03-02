@@ -29,6 +29,18 @@ export const fetchInitialDeals = () => {
   return Axios.get<IDealsResponseModel>(`${API_HOST}/api/deals`);
 };
 
+// Deal API Request with a search term.
+
+export const fetchDealsWithSearch = (searchTerm: string) => {
+  if (searchTerm == "") {
+    return fetchInitialDeals();
+  }
+
+  return Axios.get<IDealsResponseModel>(
+    `${API_HOST}/api/deals?searchTerm=${searchTerm}`
+  );
+};
+
 // Deal API Request.
 
 export interface IDealDetailsResponseModel {

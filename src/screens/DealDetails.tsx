@@ -24,12 +24,17 @@ class DealDetails extends React.Component<
 
   componentDidMount() {
     const dealId = this.props.navigation.getParam("dealId", 0);
-    fetchDealDetails(dealId).then(r => {
-      this.setState({
-        deal: r.data,
-        isLoading: false
+    fetchDealDetails(dealId)
+      .then(r => {
+        this.setState({
+          deal: r.data,
+          isLoading: false
+        });
+      })
+      .catch(() => {
+        // There's a problem with the network.
+        // Use a utility function to present a Toast.
       });
-    });
   }
 
   render() {

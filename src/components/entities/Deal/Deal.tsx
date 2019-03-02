@@ -42,8 +42,6 @@ class Deal extends React.Component<IDealProps> {
 
 const styles = StyleSheet.create({
   deal: {
-    marginHorizontal: 12,
-    marginTop: 6,
     marginBottom: 6
   },
   image: {
@@ -57,10 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     backgroundColor: "rgba(237, 149, 45, 0.4)"
   },
-  detail: {
-    borderWidth: 0.5,
-    borderStyle: "dotted"
-  },
+  detail: {},
   footer: {
     flexDirection: "row",
     justifyContent: "space-around",
