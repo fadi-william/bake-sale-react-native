@@ -23,7 +23,10 @@ class DealDetails extends React.Component<
   };
 
   componentDidMount() {
-    const dealId = this.props.navigation.getParam("dealId", 0);
+    const dealId = this.props.navigation.getParam(
+      "dealId",
+      "72c5ab4dd5bd5531fe3cdaf65d1ae395"
+    );
     fetchDealDetails(dealId)
       .then(r => {
         this.setState({
