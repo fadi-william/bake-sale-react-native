@@ -3,17 +3,28 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-/!\ The app has been tested on Android Only!
-
 This app presents deals from bakesaleforgood website.
+
+/!\ The app has been tested on Android Only.
+
+The app has been implemented while following LinkedIn Learning's "React Native Essential Training".
+
+<div align="center">
+    <img src="./screenshots/1.png" alt="User is playing!" width="100px" />
+    <img src="./screenshots/2.png" alt="User won!" width="100px" /> 
+    <img src="./screenshots/3.png" alt="User lost!" width="100px" /> 
+</div>
 
 ## The project uses the following technologies :
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Native](http://facebook.github.io/react-native/)
 - [React Navigation](https://reactnavigation.org)
-- [MST](https://github.com/mobxjs/mobx-state-tree)
-- [RxJS](http://reactivex.io/rxjs/)
+
+## Future improvements
+
+- Use [MST](https://github.com/mobxjs/mobx-state-tree)
+- Use [RxJS](http://reactivex.io/rxjs/)
 
 ## Testing the app
 
